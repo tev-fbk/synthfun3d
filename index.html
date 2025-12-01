@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JNN7F7HDFD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-JNN7F7HDFD');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description" content="SynthFun3D: Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <title>Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding</title>
+
+  <link href="./static/css/bulma.min.css" rel="stylesheet">
+  <link href="./static/css/bulma-carousel.min.css" rel="stylesheet">
+  <link href="./static/css/bulma-slider.min.css" rel="stylesheet">
+  <link href="./static/css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="./static/css/index.css" rel="stylesheet">
+  
+  <!-- MathJax -->
+  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title">SynthFun3D: Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=UEhVxSUAAAAJ">Jaime Corsetti</a><sup>1,2</sup>,
+              </span>
+              
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=EOU10lkAAAAJ">Francesco Giuliari</a><sup>1</sup>,
+              </span>
+              
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=dT1N2IUAAAAJ">Davide Boscaini</a><sup>1</sup>,
+              </span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=C7F4B6MAAAAJ">Pedro Hermosilla</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=zooORRsAAAAJ">Andrea Pilzer</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=VsmIGqsAAAAJ">Guofeng Mei</a><sup>1</sup>,
+              </span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=1NH2hXoAAAAJ">Alexandros Delitzas</a><sup>5,6</sup>,
+              </span>
+                <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-xOsXi8AAAAJ">Francis Engelmann</a><sup>7</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=BQ7li6AAAAAJ">Fabio Poiesi</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>TeV - Fondazione Bruno Kessler</span>
+              <span class="author-block"><sup>2</sup>University of Trento</span>
+              <span class="author-block"><sup>3</sup>TU Wien</span>
+              <span class="author-block"><sup>4</sup>NVIDIA</span>
+              <span class="author-block"><sup>5</sup>ETH Zurich</span>
+              <span class="author-block"><sup>6</sup>MPI for Informatics</span>
+              <span class="author-block"><sup>7</sup>Stanford University</span>
+              <p>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2511.23230" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/tev-fbk/synthfun3d" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+              
+              <!-- <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-file-pdf"></i>
+                  </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/teaser.png" alt="SynthFun3D teaser" />
+        <p></p>
+        <h2 class="subtitle has-text-centered" style="margin-top: 30px;">
+          <b>SynthFun3D</b> is the first method designed for <b>task-based 3d scene synthesis</b>. 
+          Given an textual description of an action to perform in an indoor scenario, <b>SynthFun3D generates a 3D scene with the spatial requirements implied by the description</b>, by retrieving and placing annotated 3D assets from a large scale database. 
+          This allows to generate large-scale datasets for functionality understanding and segmentation, as the masks retrieved contextually with the objects <b>can be used to train models for task-related perception</b>.
+    
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Paragraph below is for the video  -->
+  <!-- <section class="hero is-light is-small has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+          <p>
+            Functionality understanding in 3D, which aims to identify the functional element in a 3D scene to complete an action (e.g., the correct handle to "Open the second drawer of the cabinet near the bed"), is hindered by the scarcity of real-world data due to the substantial effort needed for its collection and annotation. 
+            To address this, we introduce SynthFun3D, the first method for task-based 3D scene synthesis. 
+            Given the action description, SynthFun3D generates a 3D indoor environment using a furniture asset database with part-level annotation, ensuring the action can be accomplished.
+            It reasons about the action to automatically identify and retrieve the 3D mask of the correct functional element, enabling the inexpensive and large-scale generation of high-quality annotated data.
+            We validate SynthFun3D through user studies, which demonstrate improved scene-prompt coherence compared to other approaches. 
+            Our quantitative results further show that the generated data can either replace real data with minor performance loss or supplement real data for improved performance, thereby providing an inexpensive and scalable solution for data-hungry 3D applications.          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- <hr>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Key Idea</h2>
+          <img src="" alt="IMG(?)" />
+          <div class="content has-text-justified">
+            <p>
+              Descrizione key idea
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr> -->
+      <!-- Method. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
+          <img src="./static/images/diagram.png" alt="Architecture of SynthFun3D" />
+          <div class="content has-text-justified">
+            We design SynthFun3D as a training-free approach, that leverages an LLM and a large-scale 3D asset database with part-level annotations to generate 3D scenes from textual descriptions.
+            Inspired by Holodeck [1] an LLM is used to generate the room layout and descriptions of objects within the room from the input prompt.
+            Then, for each object description, a retrieval pipeline is employed to find the most suitable 3D asset.
+            The object on which the action is to be performed is retrieved along with the mask of the functional element required to complete the action, by considering both the similarity of the asset with a provided description (1) and the arrangement and quantity of functional elements on it (2-3).
+            Finally, the retrieved objects are arranged within the generated room according to the spatial relationships explicitly defined in the input prompt, via a Depth-First-Search algorithm.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Qualitatives. -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Qualitative scene generation results</h2>
+            <img src="./static/images/qual.png" alt="Qualitative scene generation results" />
+            <div class="content has-text-justified">
+              <p>
+                We show examples of 3D scenes generated by SynthFun3D from different textual descriptions. For each scene, we also show a synthetic frame with the functional element visible, and a photorealistic version of the frame obtained with Cosmos-Transfer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Two column section. -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Performance on downstream task</h2>
+            <div class="columns">
+              <div class="column is-half">
+                <div class="content has-text-justified">
+                  <p>
+                    We measure the performance of SynthFun3D by using its generated data (S) to train a pointing-capable VLM for pointing at functional elements in images, following the approach in Fun3DU [1].
+                    We test the trained model on real data from SceneFun3D [2].
+                    The best performance is obtained by training with our data and the Cosmos-enhanced frames (S+C) and finetuning on the real training set (R).
+                    Our method can generate training data that achieves comparable performance at a fraction of the cost requires to collect and annotate real data for functionality understanding.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <img src="./static/images/table.png" alt="Performance on downstream task" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- related works. -->
+    <section class="section">
+      <div class="container is-max-desktop">
+            <h2 class="title is-4" id="references">Related work</h2>
+            <div class="content has-text-justified">
+              <p>
+                [1] Yang, Yue, et al. "Holodeck: Language guided generation of 3d embodied ai environments." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.
+              </p>
+              <p>
+                [2] Corsetti, Jaime, et al. "Functionality understanding and segmentation in 3D scenes." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2025.
+              </p>
+              <p>
+                [3] Delitzas, Alexandros, et al. "Scenefun3D: Fine-grained functionality and affordance understanding in 3D scenes." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.
+              </p>
+          </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Citation</h2>
+If you find SynthFun3D useful for your work, please cite:
+<pre><code>BibTeX
+  @inproceedings{corsetti2025synthfun3d,
+    title={Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding},
+    author={Corsetti, Jaime and Giuliari, Francesco and Boscaini, Davide and Hermosilla, Pedro and Pilzer, Andrea and Mei, Guofeng and Delitzas, Alexandros and Engelmann, Francis and Poiesi, Fabio},
+    booktitle={},
+    year={2025}
+  }
+</code></pre>
+      </div>
+    </section>  
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/abs/2511.23230">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/tev-fbk/synthfun3d" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+              The webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
