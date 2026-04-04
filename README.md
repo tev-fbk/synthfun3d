@@ -1,17 +1,20 @@
-# SynthFun3D : Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding
-This repository contains the code for the [website](https://tev-fbk.github.io/synthfun3d/) of SynthFun3D, a novel method for task-based 3D scene synthesis.
+# SynthFun3D : Action-guided generation of 3D functionality segmentation data
+This repository contains the code for the [website](https://tev-fbk.github.io/synthfun3d/) of SynthFun3D, a novel method for generation of 3D functionality segmentation data.
 The technical report is available [on arxiv](https://arxiv.org/abs/2511.23230). The code will be released in this repo soon.
 
+
+## News
+- 30/03/2026: SynthFun3D has been accepted at [GenRecon3D workshop](https://genrecon3d.github.io/) at CVPR 2026!
 
 ## Citing SynthFun3D
 
 If you find SynthFun3D useful for your work, consider citing it:
 ```
-  @inproceedings{corsetti2025synthfun3d,
-    title={Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding},
+  @inproceedings{corsetti2026synthfun3d,
+    title={Action-guided generation of 3D functionality segmentation data},
     author={Corsetti, Jaime and Giuliari, Francesco and Boscaini, Davide and Hermosilla, Pedro and Pilzer, Andrea and Mei, Guofeng and Delitzas, Alexandros and Engelmann, Francis and Poiesi, Fabio},
-    booktitle={},
-    year={2025}
+    booktitle={IEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+    year={2026}
   }
 ```
 

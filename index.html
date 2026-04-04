@@ -11,13 +11,13 @@
     gtag('config', 'G-JNN7F7HDFD');
   </script>
   <meta charset="utf-8">
-  <meta name="description" content="SynthFun3D: Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding">
+  <meta name="description" content="SynthFun3D: Action-guided generation of 3D functionality segmentation data">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv='cache-control' content='no-cache'> 
   <meta http-equiv='expires' content='0'> 
   <meta http-equiv='pragma' content='no-cache'>
-  <title>Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding</title>
+  <title>Action-guided generation of 3D functionality segmentation data</title>
 
   <link href="./static/css/bulma.min.css" rel="stylesheet">
   <link href="./static/css/bulma-carousel.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-3 publication-title">SynthFun3D: Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding</h1>
+            <h1 class="title is-3 publication-title">SynthFun3D: Action-guided generation of 3D functionality segmentation data</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=UEhVxSUAAAAJ">Jaime Corsetti</a><sup>1,2</sup>,
@@ -63,7 +63,7 @@
                 <a href="https://scholar.google.com/citations?user=1NH2hXoAAAAJ">Alexandros Delitzas</a><sup>5,6</sup>,
               </span>
                 <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=-xOsXi8AAAAJ">Francis Engelmann</a><sup>7</sup>,
+              <a href="https://scholar.google.com/citations?user=-xOsXi8AAAAJ">Francis Engelmann</a><sup>7,8</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=BQ7li6AAAAAJ">Fabio Poiesi</a><sup>1</sup>
@@ -78,6 +78,7 @@
               <span class="author-block"><sup>5</sup>ETH Zurich</span>
               <span class="author-block"><sup>6</sup>MPI for Informatics</span>
               <span class="author-block"><sup>7</sup>Stanford University</span>
+              <span class="author-block"><sup>8</sup>USI Lugano</span>
               <p>
 
             <div class="column has-text-centered">
@@ -123,9 +124,10 @@
         <img src="./static/images/teaser.png" alt="SynthFun3D teaser" />
         <p></p>
         <h2 class="subtitle has-text-centered" style="margin-top: 30px;">
-          <b>SynthFun3D</b> is the first method designed for <b>task-based 3d scene synthesis</b>. 
-          Given an textual description of an action to perform in an indoor scenario, <b>SynthFun3D generates a 3D scene with the spatial requirements implied by the description</b>, by retrieving and placing annotated 3D assets from a large scale database. 
-          This allows to generate large-scale datasets for functionality understanding and segmentation, as the masks retrieved contextually with the objects <b>can be used to train models for task-related perception</b>.
+          We introduce SynthFun3D, the first method for generating 3D functionality segmentation data directly from action descriptions.
+          SynthFun3D constructs a plausible 3D scene by retrieving objects with part-level annotations from a large-scale asset repository and arranging them under spatial and semantic constraints.
+          SynthFun3D renders multi-view images and automatically identifies the target functional element, producing precise ground-truth masks without manual annotation.
+          Our synthetic data generation pipeline provides a scalable and effective complement to manual annotation for 3D functionality understanding.
     
         </h2>
       </div>
@@ -153,12 +155,14 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
           <p>
-            Functionality understanding in 3D, which aims to identify the functional element in a 3D scene to complete an action (e.g., the correct handle to "Open the second drawer of the cabinet near the bed"), is hindered by the scarcity of real-world data due to the substantial effort needed for its collection and annotation. 
-            To address this, we introduce SynthFun3D, the first method for task-based 3D scene synthesis. 
-            Given the action description, SynthFun3D generates a 3D indoor environment using a furniture asset database with part-level annotation, ensuring the action can be accomplished.
-            It reasons about the action to automatically identify and retrieve the 3D mask of the correct functional element, enabling the inexpensive and large-scale generation of high-quality annotated data.
-            We validate SynthFun3D through user studies, which demonstrate improved scene-prompt coherence compared to other approaches. 
-            Our quantitative results further show that the generated data can either replace real data with minor performance loss or supplement real data for improved performance, thereby providing an inexpensive and scalable solution for data-hungry 3D applications.          
+            3D functionality segmentation aims to identify the interactive element in a 3D scene required to perform an action described in free-form language (e.g., the handle to "Open the second drawer of the cabinet near the bed").
+        Progress has been constrained by the scarcity of annotated real-world data, as collecting and labeling fine-grained 3D masks is prohibitively expensive.
+        To address this limitation, we introduce SynthFun3D, the first method for generating 3D functionality segmentation data directly from action descriptions.
+        Given an action description, SynthFun3D constructs a plausible 3D scene by retrieving objects with part-level annotations from a large-scale asset repository and arranging them under spatial and semantic constraints.
+        SynthFun3D renders multi-view images and automatically identifies the target functional element, producing precise ground-truth masks without manual annotation.
+        We demonstrate the effectiveness of the generated data by training a VLM-based 3D functionality segmentation model.
+        Augmenting real-world data with our synthetic data consistently improves performance, with gains of +2.2 mAP, +6.3 mAR, and +5.7 mIoU over real-only training.
+
           </div>
         </div>
       </div>
@@ -190,8 +194,8 @@
             We design SynthFun3D as a training-free approach, that leverages an LLM and a large-scale 3D asset database with part-level annotations to generate 3D scenes from textual descriptions.
             Inspired by Holodeck [1] an LLM is used to generate the room layout and descriptions of objects within the room from the input prompt.
             Then, for each object description, a retrieval pipeline is employed to find the most suitable 3D asset.
-            The object on which the action is to be performed is retrieved along with the mask of the functional element required to complete the action, by considering both the similarity of the asset with a provided description (1) and the arrangement and quantity of functional elements on it (2-3).
-            Finally, the retrieved objects are arranged within the generated room according to the spatial relationships explicitly defined in the input prompt, via a Depth-First-Search algorithm.
+            The object on which the action is to be performed is retrieved along with the mask of the functional element required to complete the action, and finally the retrieved objects are arranged according to the spatial relationships defined in the input prompt, via a Depth-First-Search algorithm.
+            Finally, multiple views are generating via rendering random trajectory around the object of interest, and material augmentations is applied to increase the training data variety.
           </div>
         </div>
       </div>
@@ -207,7 +211,7 @@
             <img src="./static/images/qual.png" alt="Qualitative scene generation results" />
             <div class="content has-text-justified">
               <p>
-                We show examples of 3D scenes generated by SynthFun3D from different textual descriptions. For each scene, we also show a synthetic frame with the functional element visible, and a photorealistic version of the frame obtained with Cosmos-Transfer.
+                We show examples of ground-truth data generated by SynthFun3D from different textual descriptions. For each prompt, we show the original RGB image and the ground-truth functional mask of the functional element.
               </p>
             </div>
           </div>
@@ -224,9 +228,9 @@
               <div class="column is-half">
                 <div class="content has-text-justified">
                   <p>
-                    We measure the performance of SynthFun3D by using its generated data (S) to train a pointing-capable VLM for pointing at functional elements in images, following the approach in Fun3DU [1].
+                    We measure the performance of SynthFun3D by using its generated data (S) to train a VLM for pointing at functional elements in images, following the approach in Fun3DU [1].
                     We test the trained model on real data from SceneFun3D [2].
-                    The best performance is obtained by training with our data and the Cosmos-enhanced frames (S+C) and finetuning on the real training set (R).
+                    The best performance is obtained by training with our data and the augmentation-enhanced frames (S+C) and finetuning on the real training set (R).
                     Our method can generate training data that achieves comparable performance at a fraction of the cost requires to collect and annotate real data for functionality understanding.
                   </p>
                 </div>
@@ -263,11 +267,11 @@
         <h2 class="title">Citation</h2>
 If you find SynthFun3D useful for your work, please cite:
 <pre><code>BibTeX
-  @inproceedings{corsetti2025synthfun3d,
-    title={Language-guided 3D Scene Synthesis for Fine-grained Functionality Understanding},
+  @inproceedings{corsetti2026synthfun3d,
+    title={Action-guided generation of 3D functionality segmentation data},
     author={Corsetti, Jaime and Giuliari, Francesco and Boscaini, Davide and Hermosilla, Pedro and Pilzer, Andrea and Mei, Guofeng and Delitzas, Alexandros and Engelmann, Francis and Poiesi, Fabio},
-    booktitle={},
-    year={2025}
+    booktitle={IEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+    year={2026}
   }
 </code></pre>
       </div>
@@ -284,7 +288,7 @@ If you find SynthFun3D useful for your work, please cite:
       </div>
       <div class="columns is-centered">
         <div class="column is-8">
-          <div class="content">
+          <div class="content">    
             <p>
               This website is licensed under a <a rel="license"
               href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
