@@ -13,7 +13,7 @@ If you find SynthFun3D useful for your work, consider citing it:
   @inproceedings{corsetti2026synthfun3d,
     title={Action-guided generation of 3D functionality segmentation data},
     author={Corsetti, Jaime and Giuliari, Francesco and Boscaini, Davide and Hermosilla, Pedro and Pilzer, Andrea and Mei, Guofeng and Delitzas, Alexandros and Engelmann, Francis and Poiesi, Fabio},
-    booktitle={IEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+    booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
     year={2026}
   }
 ```
